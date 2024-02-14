@@ -1,0 +1,21 @@
+<div class="card p-4 post-details">
+    <form class="form edit-post-form" data-id="{{id}}">
+        <div class="form-group my-3">
+            <label for="post-title">Post Title:</label>
+            <input class="form-input w-100 my-3" type="text" id="post-title" name="post-title" value="{{title}}" />
+        </div>
+        <div class="form-group my-3">
+            <label for="post-content">Post Content:</label>
+            <textarea class="form-input w-100 my-3" id="post-content" name="post-content">{{content}}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+
+    <p class="mt-4">Posted by {{user.username}} on {{format_date date_created}}</p>
+</div>
+
+
+
+<script src="../js/postUpdate.js"></script>
