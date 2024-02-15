@@ -15,12 +15,14 @@
             <a class="navbar-brand" href="/"><h1 class="d-inline align-middle">Tech Blog</h1></a>
 
                 <!-- Conditionally render login or logout links -->
+                <div class="d-flex flex-row">
                 {{#if logged_in}}
-                <a class="btn btn-info" href="/dashboard">Dashboard</a> |
+                <a class="btn btn-info" href="/dashboard">Dashboard</a>
                 <button class="btn btn-dark" id="logout">Logout</button>
                 {{else}}
                 <a class="btn btn-primary" href="/login">Login</a>
                 {{/if}}
+                </div>
             </nav>
         </header>
         <main class="container container-fluid mt-5">
