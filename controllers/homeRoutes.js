@@ -50,9 +50,14 @@ router.get('/posts/:id', async (req, res) => {
 
         const post = dbPostData.get({ plain: true });
 
+        // adds a new property to the post object, so if the logged-in user is the post author, they can see the edit and delete buttons
+        post.isAuthor = req.session.user_id === post.user_id;
+
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id,
+            isAuthor: post.isAuthor,
         });
     } catch (err) {
         res.status(500).json(err);
