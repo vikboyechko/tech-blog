@@ -12,7 +12,7 @@ Comments.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        content: {
+        comment: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -25,6 +25,13 @@ Comments.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'users',
+                key: 'id',
+            },
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'posts',
                 key: 'id',
             },
         },
