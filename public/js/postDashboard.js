@@ -24,6 +24,23 @@ const newFormHandler = async (event) => {
     }
 };
 
+// This function is used to take the user to the edit page for a post
+const editButtonHandler = async (event) => {
+    if (event.target.classList.contains('btn-edit')) {
+        const id = event.target.getAttribute('data-id');
+
+        const response = await fetch(`/api/posts/${id}`, {
+            method: 'GET',
+        });
+
+        if (response.ok) {
+            document.location.replace('/posts/edit');
+        } else {
+            console.log('Failed to get post');
+        }
+    }
+};
+
 // Function to handle the delete post button
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -43,4 +60,12 @@ const delButtonHandler = async (event) => {
 
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
 
-document.querySelector('.post-list').addEventListener('click', delButtonHandler);
+// Attach event listener to delete button on the post page
+document.querySelectorAll('.btn-delete').forEach((button) => {
+    button.addEventListener('click', delButtonHandler);
+});
+
+// Attach event listner to edit button on the post page
+document.querySelectorAll('.btn-edit').forEach((button) => {
+    button.addEventListener('click', editButtonHandler);
+});

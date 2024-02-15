@@ -37,7 +37,8 @@
                 <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+                <a href="/edit/{{id}}" class="btn btn-sm btn-primary btn-edit" data-id="{{id}}">Edit</a>
+                <button class="btn btn-sm btn-danger btn-delete" data-id="{{post.id}}">DELETE</button>
             </div>
         </div>
         {{/each}}
