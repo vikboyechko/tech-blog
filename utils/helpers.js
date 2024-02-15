@@ -1,3 +1,5 @@
+// Helper functions for formatting dates and checking if a user can edit a post.
+
 module.exports = {
     format_date: (date) => {
         // Format date as MM/DD/YYYY

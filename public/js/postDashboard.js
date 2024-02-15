@@ -1,3 +1,6 @@
+// Dashboard handler for logged in users to create, update, and delete posts
+
+// Function to handle the new post form
 const newFormHandler = async (event) => {
     event.preventDefault();
 
@@ -21,6 +24,7 @@ const newFormHandler = async (event) => {
     }
 };
 
+// Function to handle the delete post button
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');

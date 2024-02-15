@@ -1,3 +1,5 @@
+// Login and Signup form handlers
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
 

@@ -1,9 +1,12 @@
+{{!-- Logged in User Dashboard with option to publish new post, see previous posts, and delete them --}}
+
 <div class="row">
     <div class="col-auto">
         <h2>Welcome, {{username}}!</h2>
     </div>
 </div>
 
+{{!-- Publish a new post --}}
 <div class="row mt-4">
     <div class="col-md-6 mb-4 mb-md-0">
         <h3>Publish a New Post:</h3>
@@ -23,8 +26,9 @@
         </form>
     </div>
 
+{{!-- Previous posts --}}
     {{#if posts.length}}
-    <div class="col-md-6 post-list bg-light p-3 ">
+    <div class="col-md-6 post-list p-3 ">
         <h3>My Posts:</h3>
 
         {{#each posts as |post|}}
@@ -41,4 +45,5 @@
     {{/if}}
 </div>
 
+{{!-- event handlers in postDashboard.js --}}
 <script src="./js/postDashboard.js"></script>

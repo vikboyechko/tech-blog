@@ -1,3 +1,5 @@
+// Comment form handler
+
 const commentHandler = async (event) => {
     event.preventDefault();
 

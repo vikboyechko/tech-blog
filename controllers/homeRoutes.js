@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Posts, Users, Comments } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth'); // custom helper for authentication
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
@@ -37,6 +37,7 @@ router.get('/posts/:id', async (req, res) => {
                     attributes: ['username'],
                 },
                 {
+                    // include the comment model here:
                     model: Comments,
                     include: [
                         {
@@ -53,6 +54,7 @@ router.get('/posts/:id', async (req, res) => {
         // adds a new property to the post object, so if the logged-in user is the post author, they can see the edit and delete buttons
         post.isAuthor = req.session.user_id === post.user_id;
 
+        // passes the serialized data into the session flag, along with the logged-in user's id and the isAuthor property
         res.render('post', {
             ...post,
             logged_in: req.session.logged_in,
@@ -64,7 +66,7 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
-// Use withAuth middleware to prevent access to route
+// Use withAuth helper to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID

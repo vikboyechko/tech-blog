@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create Comments model and datatypes, including the user_id foreign key.
+// Create Comments model and datatypes, including the user_id and post_id foreign keys.
 class Comments extends Model {}
 
 Comments.init(

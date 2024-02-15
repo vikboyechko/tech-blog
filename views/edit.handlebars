@@ -1,3 +1,5 @@
+{{!-- The post edit view, with option to update title and content --}}
+
 <div class="card p-4 post-details">
     <form class="form edit-post-form" data-id="{{id}}">
         <div class="form-group my-3">
@@ -16,6 +18,5 @@
     <p class="mt-4">Posted by {{user.username}} on {{format_date date_created}}</p>
 </div>
 
-
-
+{{!-- event handlers in postUpdate.js --}}
 <script src="../js/postUpdate.js"></script>

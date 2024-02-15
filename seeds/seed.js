@@ -1,3 +1,5 @@
+// Seed the database with the data from the json files in the seeds folder.
+
 const sequelize = require('../config/connection');
 const { Users, Posts, Comments } = require('../models');
 

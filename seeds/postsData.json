@@ -1,17 +1,17 @@
 [
   {
-    "title": "Music Near Me",
-    "content": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "title": "What is the purpose of life?",
+    "content": "Deep in thought this morning, wondering if anyone has an answer.",
     "user_id": "1"
   },
   {
-    "title": "The Ultimate Tech Quiz",
-    "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "title": "Bought a new car!",
+    "content": "Well, new to me at least. It's a 1997 Honda Accord. I'm in love with it!",
     "user_id": "2"
   },
   {
-    "title": "Roll 'Em Up",
-    "content": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "title": "New game idea!",
+    "content": "I'm thinking of making a game where you play as a cat and you have to knock things off of tables. I think it could be a hit!",
     "user_id": "3"
   }
 
